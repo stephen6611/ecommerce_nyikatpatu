@@ -11,15 +11,15 @@ export default async function handler(req, res) {
         payment_method_types: ['card'],
         billing_address_collection: 'auto',
         shipping_options: [
-          { shipping_rate: 'shr_1LFkusHydWVpBAMMs5Q6qDqP' },
+          { shipping_rate: 'shr_1Kn3IaEnylLNWUqj5rqhg9oV' },
         ],
         line_items: req.body.map((item) => {
           const img = item.image[0].asset._ref;
-          const newImage = img.replace('image-', 'https://cdn.sanity.io/images/zn4hlmz8/production/').replace('-webp', '.webp');
+          const newImage = img.replace('image-', 'https://cdn.sanity.io/images/vfxfwnaw/production/').replace('-webp', '.webp');
 
           return {
             price_data: { 
-              currency: 'idr',
+              currency: 'usd',
               product_data: { 
                 name: item.name,
                 images: [newImage],
